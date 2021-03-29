@@ -1,5 +1,5 @@
 // 
-// LCR Dice Game.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// TODO: Write out the summary of the project here and details about methodology.
 //
 
 #include "stdafx.h"
@@ -37,9 +37,13 @@ int main()
         cout << "Please enter your name: " << endl;
 
         players[i].getName();
+        players[i].playerChips = 3; // Each player starts with 3 chips.
+
+        cout << players[i].playerName << " has " << players[i].playerChips << " chips\n";
     }
 
     Player::gameRules(); // Call the gameRules() method, which prints the Game Rules to the console.
+    
 
     return 0;
 }

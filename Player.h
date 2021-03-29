@@ -6,11 +6,13 @@
 class Player
 {
 public:
-	//int numPlayers;
+	int numPlayers;
+	int playerChips;
 	std::string playerName = "";
 
 	Player() = default;
 
+	void getChips();
 	void getName();
 	static void gameRules();
 };
