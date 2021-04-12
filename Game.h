@@ -1,18 +1,24 @@
 #pragma once
 
 #include "stdafx.h"
-#include "Player.h"
+#include <fstream>
+#include <string>
 
 using namespace std;
 
-class Game
-{
+class Game {
 private:
-	int numberOfPlayers;
-	Player m_player;
+	ifstream inputFile;
+	ofstream outputFile;
+	string line;
 
-	void WelcomePlayers();
-	void GetPlayerInput(string& playerInput) const;
 public:
-	void RunGame();
+	void startGame();
+	void endGame();
+	int numPlayers;
+	int maxChips;
+	int x; // Position in name array
+	string name[100]; // Player array
+	string winnerName;
+	bool winner;
 };

@@ -1,41 +1,50 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+#include <fstream>
 #include "Game.h"
 
-void Game::WelcomePlayers()
+using namespace std;
+
+// Opens and Reads the file containing rules, Gets the player count and sets the win condition
+void Game::startGame()
 {
-	cout << "Welcome to Left Center Right" << endl;
+	inputFile.open("Rules.txt");
+	if (inputFile.is_open())
+	{
+		while (getline(inputFile, line))
+		{
+			cout << line << endl;
+		}
+		inputFile.close();
+	}
+	else // Error checking
+	{
+		cout << "Unable to access rule file..." << endl;
+	}
 
-    cout << "How many players are playing? (You must have at least 3 players to play): \n";
-    cin >> numberOfPlayers;
+	do {
+		cout << "\nEnter the number of players:" << endl;
+		cin >> numPlayers;
 
-    if (numberOfPlayers <= 2)
-    {
-        cout << "More players are required.\n";
-        WelcomePlayers();
-    }
+		if (numPlayers < 3 && cin.good())
+		{
+			cout << "You need at least 3 players to play Left Center Right..." << endl;
+		}
+		else if (cin.fail())
+		{
+			cout << "Unrecognized number was entered..." << endl;
+			cin.clear();
+			cin.ignore(256, '\n');
+		}
+	} while (numPlayers < 3 || cin.fail());
 
-    static Player* players = new Player[numberOfPlayers];
-
-    for (int i = 0; i < numberOfPlayers; i++) // Loop through the player Count to get the names of each player playing the game.
-    {
-        cout << "Please enter your name: " << endl;
-
-        players[i].getName();
-        players[i].playerChips = 3; // Each player starts with 3 chips.
-
-        cout << players[i].playerName << " has " << players[i].playerChips << " chips\n";
-    }
-
-    Player::gameRules(); // Call the gameRules() method, which prints the Game Rules to the console.
-
+	maxChips = numPlayers * 3;
 }
 
-void Game::RunGame()
+void Game::endGame()
 {
-    WelcomePlayers();
+	winnerName = name[x];
 
-    // Infinite loop currently, will need to setup logic to determine only one player has chips left.
-    while (true)
-    {
-        m_player.getChips();
-    }
+	cout << "The winner of this game is: " << winnerName << endl;
 }
