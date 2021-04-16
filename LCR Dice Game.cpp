@@ -1,5 +1,5 @@
 /*   SUMMARY   *
-* Joshua Langer | IT-312 | April 12, 2021
+* Joshua Langer | IT-312 | April 17, 2021
 * Left Center Right Dice Game
 * Over the course of the project and the building block learnings assigned I was able to find a path to complete the project that had
 * good program flow and utilized differnt systems we were able to learn in this course. The first version of this project I had started
