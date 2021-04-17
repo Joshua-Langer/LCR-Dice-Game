@@ -9,7 +9,6 @@ using namespace std;
 class Game {
 private:
 	ifstream inputFile;
-	ofstream outputFile;
 	string line;
 
 public:
