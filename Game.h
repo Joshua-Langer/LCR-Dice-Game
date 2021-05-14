@@ -1,6 +1,5 @@
 #pragma once
 
-#include "stdafx.h"
 #include <fstream>
 #include <string>
 
@@ -12,7 +11,7 @@ private:
 	string line;
 
 public:
-	void startGame();
+	void start_game();
 	void endGame();
 	int numPlayers;
 	int maxChips;

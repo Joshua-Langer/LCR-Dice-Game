@@ -13,7 +13,7 @@ void Dice::rolling()
 }
 
 // Checks the amounts of dice the current player has and assigns the amount of rolls.
-void Dice::runGame()
+void Dice::run_game()
 {
 	if (chips[a] == 1)
 	{
@@ -38,9 +38,9 @@ void Dice::runGame()
 // Handles the results and displays each time roll is called
 void Dice::roll()
 {
-	rollResult = (rand() % 6) + 1; // Generates a random roll
+	roll_result_ = (rand() % 6) + 1; // Generates a random roll
 
-	switch (rollResult)
+	switch (roll_result_)
 	{
 	case 1:
 		if (c == 0) // First position in the array
@@ -85,6 +85,8 @@ void Dice::roll()
 		break;
 	case 6:
 		cout << "6" << endl;
+		break;
+	default:
 		break;
 	}
 }

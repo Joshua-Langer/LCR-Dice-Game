@@ -1,15 +1,13 @@
 #pragma once
 
-#include "stdafx.h"
-
 class Dice {
 private:
-	int rollResult;
+	int roll_result_ = 0;
 
 public:
-	void rolling();
+	static void rolling();
 	void roll();
-	void runGame();
+	void run_game();
 	int center, a, z, c, chips[100];
 	// a is the position in the chips array
 	// z is for comparing the last position in the name array from Game class

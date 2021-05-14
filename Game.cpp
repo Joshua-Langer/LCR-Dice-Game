@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -7,7 +6,7 @@
 using namespace std;
 
 // Opens and Reads the file containing rules, Gets the player count and sets the win condition
-void Game::startGame()
+void Game::start_game()
 {
 	inputFile.open("Rules.txt");
 	if (inputFile.is_open())
